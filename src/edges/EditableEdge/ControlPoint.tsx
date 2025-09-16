@@ -40,7 +40,6 @@ export function ControlPoint({
   // CALLBACKS -----------------------------------------------------------------
   const updatePosition = useCallback(
     (pos: XYPosition) => {
-      console.log(`[DEBUG] updatePosition start for id=${id}, active=${active}, new pos=`, pos);
       return (points: ControlPointData[]) => {
         const shouldActivate = !active;
         let updated: ControlPointData[];
@@ -62,7 +61,6 @@ export function ControlPoint({
             p.id === id ? { ...p, ...pos } : p
           );
         }
-        console.log(`[DEBUG] updatePosition end, updated points=`, updated);
         return updated;
       };
     },
@@ -85,7 +83,6 @@ export function ControlPoint({
 
   const handleKeyPress = useCallback(
     (e: React.KeyboardEvent) => {
-      console.log(`[DEBUG] handleKeyPress for id=${id}, key=`, e.key);
       let newPos = { x, y };
       switch (e.key) {
         case 'Enter':
@@ -119,7 +116,6 @@ export function ControlPoint({
         default:
           break;
       }
-      console.log(`[DEBUG] handleKeyPress newPos=`, newPos);
     },
     [x, y, updatePosition, deletePoint, setControlPoints, active]
   );
@@ -130,7 +126,6 @@ export function ControlPoint({
 
     const onPointerMove = (e: PointerEvent) => {
       const pos = screenToFlowPosition({ x: e.clientX, y: e.clientY });
-      console.log(`[DEBUG] onPointerMove for id=${id}, pos=`, pos);
       setControlPoints(updatePosition(pos));
     };
 
@@ -141,7 +136,6 @@ export function ControlPoint({
       }
       setDragging(false);
       const pos = screenToFlowPosition({ x: e.clientX, y: e.clientY });
-      console.log(`[DEBUG] onPointerUp for id=${id}, pos=`, pos);
       setControlPoints(updatePosition(pos));
     };
 

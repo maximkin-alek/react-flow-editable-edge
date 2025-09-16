@@ -73,14 +73,12 @@ export function EditableEdgeComponent({
 
 const setControlPoints = useCallback(
   (update: (points: ControlPointData[]) => ControlPointData[]) => {
-    console.log(`[DEBUG] setControlPoints start`);
     setEdges((edges) => edges.map((e) => {
       if (e.id !== id) return e;
       if (!isEditableEdge(e)) return e;
       const points = e.data?.points ?? [];
       // Apply update and filter only active points for storage
       const updatedPoints = update(points).filter((p) => p.active);
-      console.log(`[DEBUG] setControlPoints updatedPoints=`, updatedPoints);
       const data = { ...e.data, points: updatedPoints };
       return { ...e, data };
     }));

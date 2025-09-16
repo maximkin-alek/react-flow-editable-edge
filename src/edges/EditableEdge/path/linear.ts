@@ -10,7 +10,6 @@ function getOrthSegments(
   p2: XYPosition,
   preferHorizFirst: boolean
 ): SubSegment[] {
-  console.log(`[DEBUG] getOrthSegments p1=`, p1, `p2=`, p2, `preferHorizFirst=`, preferHorizFirst);
   if (p1.x === p2.x && p1.y === p2.y) return [];
   if (p1.x === p2.x) return [{ from: p1, to: p2 }]; // vert
   if (p1.y === p2.y) return [{ from: p1, to: p2 }]; // horiz
@@ -77,10 +76,8 @@ export function getLinearControlPoints(
     let lastPrev = isControlPoint(p1) ? p1.id : undefined;
     for (const seg of segments) {
       const length = Math.hypot(seg.to.x - seg.from.x, seg.to.y - seg.from.y);
-      console.log(`[DEBUG] seg length=`, length, `from=`, seg.from, `to=`, seg.to);
       const MIN_SEG_LENGTH = 20;
       if (length < MIN_SEG_LENGTH) {
-        console.log(`[DEBUG] Skipping mid point for short seg length=`, length);
         continue; // No inactive point on short segment
       }
       const mid: ControlPointData = {

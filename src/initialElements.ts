@@ -54,62 +54,62 @@ export const edgeTypes = {
 };
 
 export const initialEdges: EditableEdge[] = [
-  {
-    id: '1->2',
-    type: 'editable-edge',
-    source: '1',
-    target: '2',
-    sourceHandle: 'right',
-    targetHandle: 'left',
-    animated: true,
-    data: {
-      algorithm: Algorithm.CatmullRom,
-      points: [
-        {
-          x: 92.5,
-          y: 24.75,
-          id: 'spline-d24e57b4-88ad-47af-8b4e-9ecec78e5066',
-          active: true,
-        },
-        {
-          x: 129.5,
-          y: 16.25,
-          id: 'spline-bec90e8b-2d76-4727-a4d6-9fabdf18aea5',
-          active: true,
-        },
-        {
-          x: 168,
-          y: -19.25,
-          id: 'spline-8d5f62cc-e9d7-4460-98fd-bd9b902bc671',
-          active: true,
-        },
-        {
-          x: 143,
-          y: -45,
-          id: 'spline-252e2875-a052-43fb-9f01-c4670fd3170c',
-          active: true,
-        },
-        {
-          x: 119.5,
-          y: -20.75,
-          id: 'spline-f37a3789-dfb7-46e7-abed-04374b274ce3',
-          active: true,
-        },
-        {
-          x: 159.5,
-          y: 17.25,
-          id: 'spline-724c522e-c90b-46c3-9e95-8b99d955cc70',
-          active: true,
-        },
-        {
-          x: 202.5,
-          y: 23.25,
-          id: 'spline-e97e7074-c028-4cf6-82dc-b6ed1690db2f',
-          active: true,
-        },
-      ],
-    },
-  },
+  // {
+  //   id: '1->2',
+  //   type: 'editable-edge',
+  //   source: '1',
+  //   target: '2',
+  //   sourceHandle: 'right',
+  //   targetHandle: 'left',
+  //   animated: true,
+  //   data: {
+  //     algorithm: Algorithm.CatmullRom,
+  //     points: [
+  //       {
+  //         x: 92.5,
+  //         y: 24.75,
+  //         id: 'spline-d24e57b4-88ad-47af-8b4e-9ecec78e5066',
+  //         active: true,
+  //       },
+  //       {
+  //         x: 129.5,
+  //         y: 16.25,
+  //         id: 'spline-bec90e8b-2d76-4727-a4d6-9fabdf18aea5',
+  //         active: true,
+  //       },
+  //       {
+  //         x: 168,
+  //         y: -19.25,
+  //         id: 'spline-8d5f62cc-e9d7-4460-98fd-bd9b902bc671',
+  //         active: true,
+  //       },
+  //       {
+  //         x: 143,
+  //         y: -45,
+  //         id: 'spline-252e2875-a052-43fb-9f01-c4670fd3170c',
+  //         active: true,
+  //       },
+  //       {
+  //         x: 119.5,
+  //         y: -20.75,
+  //         id: 'spline-f37a3789-dfb7-46e7-abed-04374b274ce3',
+  //         active: true,
+  //       },
+  //       {
+  //         x: 159.5,
+  //         y: 17.25,
+  //         id: 'spline-724c522e-c90b-46c3-9e95-8b99d955cc70',
+  //         active: true,
+  //       },
+  //       {
+  //         x: 202.5,
+  //         y: 23.25,
+  //         id: 'spline-e97e7074-c028-4cf6-82dc-b6ed1690db2f',
+  //         active: true,
+  //       },
+  //     ],
+  //   },
+  // },
   {
     id: '3->4',
     type: 'editable-edge',
@@ -160,16 +160,16 @@ export const initialEdges: EditableEdge[] = [
       ],
     },
   },
-  {
-    id: '5->6',
-    type: 'editable-edge',
-    source: '5',
-    target: '6',
-    sourceHandle: 'right',
-    targetHandle: 'left',
-    data: {
-      algorithm: Algorithm.BezierCatmullRom,
-      points: [],
-    },
-  },
+  // {
+  //   id: '5->6',
+  //   type: 'editable-edge',
+  //   source: '5',
+  //   target: '6',
+  //   sourceHandle: 'right',
+  //   targetHandle: 'left',
+  //   data: {
+  //     algorithm: Algorithm.BezierCatmullRom,
+  //     points: [],
+  //   },
+  // },
 ];
