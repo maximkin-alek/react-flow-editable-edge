@@ -50,7 +50,10 @@ export default function EditableEdgeFlow() {
 				type: 'editable-edge',
 				selected: true,
 				reconnectable: true,
+
 				data: {
+					label: 'Default Label', // Default label
+					labelDirection: 'up', // Default direction
 					algorithm: DEFAULT_ALGORITHM,
 					points: connectionLinePath.map(
 						(point, i) =>
@@ -69,20 +72,20 @@ export default function EditableEdgeFlow() {
 	);
 
 	const [reconnectingEdge, setReconnectingEdge] = useState<EditableEdge | null>(null);
-const [reconnectingHandleType, setReconnectingHandleType] = useState<HandleType | null>(null);
+	const [reconnectingHandleType, setReconnectingHandleType] = useState<HandleType | null>(null);
 
-const onReconnectStart = useCallback(
-  (event: React.MouseEvent, edge: EditableEdge, handleType: HandleType) => {
-    setReconnectingEdge(edge);
-    setReconnectingHandleType(handleType);
-  },
-  []
-);
+	const onReconnectStart = useCallback(
+		(event: React.MouseEvent, edge: EditableEdge, handleType: HandleType) => {
+			setReconnectingEdge(edge);
+			setReconnectingHandleType(handleType);
+		},
+		[]
+	);
 
-const onReconnectEnd = useCallback(() => {
-  setReconnectingEdge(null);
-  setReconnectingHandleType(null);
-}, []);
+	const onReconnectEnd = useCallback(() => {
+		setReconnectingEdge(null);
+		setReconnectingHandleType(null);
+	}, []);
 	// In onReconnect (keep your version, add if needed)
 	const onReconnect = useCallback(
 		(oldEdge: EditableEdge, newConnection: Connection) => {
@@ -111,10 +114,10 @@ const onReconnectEnd = useCallback(() => {
 			onReconnectStart={onReconnectStart}
 			onReconnectEnd={onReconnectEnd}
 			connectionLineComponent={(props) => <ConnectionLine
-    {...props}
-    reconnectingEdge={reconnectingEdge}
-    reconnectingHandleType={reconnectingHandleType}
-  />}
+				{...props}
+				reconnectingEdge={reconnectingEdge}
+				reconnectingHandleType={reconnectingHandleType}
+			/>}
 		>
 			<Background />
 			<Panel position="top-left">
